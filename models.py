@@ -49,7 +49,7 @@ class MASMDDI(nn.Module):
         repr_h = self.MASMG(HData)
         repr_t = self.MASMG(TData)
         kge_h = torch.stack(repr_h, dim=-2)
-        kge_h = torch.stack(repr_t, dim=-2)
+        kge_t = torch.stack(repr_t, dim=-2)
 
         attentions = self.co_attention(kge_h, kge_t)
 
